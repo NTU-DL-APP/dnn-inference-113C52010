@@ -6,23 +6,12 @@ import numpy as np
 
 # === Activation functions ===
 def relu(x):
-
     return np.maximum(0, x)
 
-
 def softmax(x):
+    e = np.exp(x - np.max(x, axis=-1, keepdims=True))
+    return e / np.sum(e, axis=-1, keepdims=True)
 
-    x = np.array(x, dtype=float)
-    # 一維向量
-    if x.ndim == 1:
-        x_shifted = x - np.max(x)
-        exp_x = np.exp(x_shifted)
-        return exp_x / np.sum(exp_x)
-    # 二維 (batch, n)
-    x_shifted = x - np.max(x, axis=1, keepdims=True)
-    exp_x = np.exp(x_shifted)
-    sum_exp = np.sum(exp_x, axis=1, keepdims=True)
-    return exp_x / sum_exp
 
 # === Flatten ===
 def flatten(x):
