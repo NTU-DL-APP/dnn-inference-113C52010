@@ -3,10 +3,14 @@ import numpy as np
 from nn_predict import nn_inference, softmax, relu
 from utils import mnist_reader
 
-YOUR_MODEL_PATH = 'model/fashion_mnist' # Default format is h5
-#TF_MODEL_PATH = f'{YOUR_MODEL_PATH}.h5'
-MODEL_WEIGHTS_PATH = f'{YOUR_MODEL_PATH}.npz'
-MODEL_ARCH_PATH = f'{YOUR_MODEL_PATH}.json'
+# YOUR_MODEL_PATH = 'model/fashion_mnist' # Default format is h5
+# #TF_MODEL_PATH = f'{YOUR_MODEL_PATH}.h5'
+# MODEL_WEIGHTS_PATH = f'{YOUR_MODEL_PATH}.npz'
+# MODEL_ARCH_PATH = f'{YOUR_MODEL_PATH}.json'
+YOUR_MODEL_PATH = '.'            # 或者直接設成 '' 
+MODEL_WEIGHTS_PATH = f'{YOUR_MODEL_PATH}/fashion_mnist.npz'
+MODEL_ARCH_PATH    = f'{YOUR_MODEL_PATH}/fashion_mnist.json'
+TF_MODEL_PATH = f'{YOUR_MODEL_PATH}.h5'
 OUTPUT_FILE = 'test_acc.txt'
 
 

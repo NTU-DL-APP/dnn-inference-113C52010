@@ -6,7 +6,7 @@ from utils import mnist_reader
 
 def run_inference_test(num_samples=100):
     # 1. 載入原始 idx 測試集
-    x_test, y_test = mnist_reader.load_mnist('data/fashion', kind='t10k')
+    x_test, y_test = mnist_reader.load_mnist('data\fashion', kind='t10k')
     
     # 2. 讀取你的模型架構與權重
     weights    = np.load('model/fashion_mnist.npz')
