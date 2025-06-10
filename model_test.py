@@ -10,6 +10,7 @@ MODEL_ARCH_PATH = f'{YOUR_MODEL_PATH}.json'
 OUTPUT_FILE        = 'test_acc.txt'
 
 
+
 def test_inference():
     if os.path.exists(OUTPUT_FILE):
         os.remove(OUTPUT_FILE)
