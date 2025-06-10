@@ -9,8 +9,17 @@ def relu(x):
     return np.maximum(0, x)
 
 def softmax(x):
-    e = np.exp(x - np.max(x, axis=-1, keepdims=True))
-    return e / np.sum(e, axis=-1, keepdims=True)
+    x = np.array(x, dtype=float)
+    # 1D 向量
+    if x.ndim == 1:
+        x_shifted = x - np.max(x)
+        exp_x = np.exp(x_shifted)
+        return exp_x / np.sum(exp_x)
+    # 2D 矩陣
+    x_shifted = x - np.max(x, axis=1, keepdims=True)
+    exp_x    = np.exp(x_shifted)
+    sum_exp  = np.sum(exp_x, axis=1, keepdims=True)
+    return exp_x / sum_exp
 
 
 # === Flatten ===
