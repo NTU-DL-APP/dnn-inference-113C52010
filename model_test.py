@@ -7,12 +7,14 @@ from utils import mnist_reader
 # #TF_MODEL_PATH = f'{YOUR_MODEL_PATH}.h5'
 # MODEL_WEIGHTS_PATH = f'{YOUR_MODEL_PATH}.npz'
 # MODEL_ARCH_PATH = f'{YOUR_MODEL_PATH}.json'
-YOUR_MODEL_PATH = '.'            # 或者直接設成 '' 
-MODEL_WEIGHTS_PATH = f'{YOUR_MODEL_PATH}/fashion_mnist.npz'
-MODEL_ARCH_PATH    = f'{YOUR_MODEL_PATH}/fashion_mnist.json'
-TF_MODEL_PATH = f'{YOUR_MODEL_PATH}.h5'
-OUTPUT_FILE = 'test_acc.txt'
+YOUR_MODEL_PATH    = 'model/fashion_mnist'
 
+
+MODEL_WEIGHTS_PATH = f'{YOUR_MODEL_PATH}.npz'  
+MODEL_ARCH_PATH    = f'{YOUR_MODEL_PATH}.json' 
+TF_MODEL_PATH      = f'{YOUR_MODEL_PATH}.h5'    
+
+OUTPUT_FILE        = 'test_acc.txt'
 
 
 def test_inference():
